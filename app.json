@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "safe-money-app",
+    "slug": "safe-money-app",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
