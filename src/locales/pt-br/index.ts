@@ -1,9 +1,9 @@
-import { labels } from "./labels";
+import { headings } from './headings'
+import { labels } from "./labels"
 
 export const ptBR = {
   ...labels,
-  greeting: "Olá",
-  farewell: "Adeus"
+  ...headings
 }
 
-export type PtBRLocaleType = typeof ptBR;
+export type PtBRLocaleType = keyof typeof ptBR

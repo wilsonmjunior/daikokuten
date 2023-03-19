@@ -1,9 +1,9 @@
-import { labels } from './labels';
+import { headings } from './headings'
+import { labels } from './labels'
 
 export const en = {
   ...labels,
-  greeting: "Hello",
-  farewell: "Goodbye"
+  ...headings
 }
 
-export type EnLocaleType = typeof en;
+export type EnLocaleType = keyof typeof en

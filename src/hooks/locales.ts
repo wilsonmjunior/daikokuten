@@ -1,9 +1,14 @@
-import { useCallback } from "react";
-import { i18n } from "../config/i18n";
+import { useCallback } from "react"
+
+import { EnLocaleType } from './../locales/en'
+import { PtBRLocaleType } from "../locales/pt-br"
+import { i18n } from "../config/i18n"
+
+type LocaleType = EnLocaleType | PtBRLocaleType
 
 export const useLocales = () => {
-  const translate = useCallback((text: string) => {
-    return i18n.t(text);
+  const translate = useCallback((text: LocaleType) => {
+    return i18n.t(text)
   }, [])
 
   return {
