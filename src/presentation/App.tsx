@@ -1,12 +1,15 @@
-import { NativeBaseProvider } from "native-base";
+import { NavigationContainer } from "@react-navigation/native"
+import { NativeBaseProvider } from "native-base"
 
-import { Home } from "./pages/Home";
-import { theme } from "./theme";
+import { AppRoutes } from "./routes/app.routes"
+import { theme } from "./theme"
 
 export default function App() {
   return (
     <NativeBaseProvider theme={theme}>
-      <Home />
+      <NavigationContainer>
+        <AppRoutes />
+      </NavigationContainer>
     </NativeBaseProvider>
-  );
+  )
 }
