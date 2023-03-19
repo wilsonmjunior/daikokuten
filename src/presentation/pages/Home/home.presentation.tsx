@@ -1,5 +1,5 @@
-import { Center, VStack } from "native-base";
-import { getStatusBarHeight } from "react-native-iphone-x-helper";
+import { Center, VStack } from "native-base"
+import { getStatusBarHeight } from "react-native-iphone-x-helper"
 
 export function HomePresentation() {
   return (

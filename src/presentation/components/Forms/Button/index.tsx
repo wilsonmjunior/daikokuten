@@ -1,10 +1,10 @@
-import { Button as NBButton, IButtonProps } from "native-base";
+import { Button as NBButton, IButtonProps } from "native-base"
 
-type IButtonType = 'primary' | 'secondary' | 'error' | 'success';
+type IButtonType = 'primary' | 'secondary' | 'error' | 'success'
 
 interface ButtonProps extends IButtonProps {
-  title: string;
-  type?: IButtonType;
+  title: string
+  type?: IButtonType
 }
 
 export function Button({ title, type = 'primary', ...othersProps }: ButtonProps) {
