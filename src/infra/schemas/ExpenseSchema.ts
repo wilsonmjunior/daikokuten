@@ -7,7 +7,7 @@ export const ExpenseSchema = {
     _id: 'string',
     name: 'string',
     type: 'string',
-    value: "number",
+    value: "double",
     created_at: 'date'
   },
 
