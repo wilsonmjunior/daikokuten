@@ -1,18 +1,27 @@
 import uuid from 'react-native-uuid';
+import { Expense } from '../../dtos/Expense';
 
 import { IExpense } from "../models/Expense";
 import { getRealm } from "../realm";
+
+const expenseMapper = (expensesResult: Realm.Results<IExpense & Realm.Object<unknown, never>>) =>
+  expensesResult.map((expense) => ({
+    id: expense._id,
+    name: expense.name,
+    type: expense.type,
+    value: expense.value,
+    createdAt: expense.created_at,
+  } as Expense))
 
 export async function listFixedExpense() {
   const realm = await getRealm();
 
   try {
-    const fixedExpense = realm.objects<IExpense[]>('Expense')
+    const fixedExpense = realm.objects<IExpense>('Expense')
       .filtered("type = 'FIXED'")
       .sorted("created_at")
-      .toJSON();
 
-    return fixedExpense;
+    return expenseMapper(fixedExpense);
   } catch (error) {
     console.warn(error);
   } finally {
@@ -27,9 +36,8 @@ export async function listVariableExpense() {
     const variablesExpenses = realm.objects<IExpense>('Expense')
       .filtered("type = 'VARIABLE'")
       .sorted("created_at")
-      .toJSON();
 
-    return variablesExpenses;
+    return expenseMapper(variablesExpenses);
   } catch (error) {
     console.warn(error);
   } finally {
