@@ -1,10 +1,10 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Feather } from '@expo/vector-icons';
 
-import { FixedExpenses } from '../pages/FixedExpenses';
-import { Home } from '../pages/Home';
-import { Settings } from '../pages/Settings';
-import { VariableExpenses } from '../pages/VariableExpenses';
+import { FixedExpenses } from '../screens/FixedExpenses';
+import { Home } from '../screens/Home';
+import { Settings } from '../screens/Settings';
+import { VariableExpenses } from '../screens/VariableExpenses';
 import { useTheme } from 'native-base';
 
 const Tab = createBottomTabNavigator();
