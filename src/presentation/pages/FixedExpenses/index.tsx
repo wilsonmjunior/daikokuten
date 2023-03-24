@@ -1,6 +1,5 @@
 import {
   Box,
-  Center,
   FlatList,
   Heading,
   Spacer,
@@ -20,20 +19,18 @@ export function FixedExpenses() {
   const { translate } = useLocales()
 
   return (
-    <Box marginTop={getStatusBarHeight() + 10}>
-      <Heading fontSize="xl" p="4" pb="3">
+    <Box marginTop={getStatusBarHeight() + 8} flex={1}>
+      <Heading fontSize="xl" px="4">
         {translate('save')}
       </Heading>
 
-      <Center width="100%">
-        <FlatList
-          data={data}
-          renderItem={({ item }) => <Rent />}
-          width="100%"
-          padding={4}
-          ItemSeparatorComponent={Separator}
-        />
-      </Center>
+      <FlatList
+        data={data}
+        renderItem={({ item }) => <Rent />}
+        width="100%"
+        padding={4}
+        ItemSeparatorComponent={Separator}
+      />
     </Box>
   )
 }
