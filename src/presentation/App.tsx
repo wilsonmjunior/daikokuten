@@ -1,7 +1,7 @@
 import { NavigationContainer } from "@react-navigation/native"
 import { NativeBaseProvider } from "native-base"
 
-import { AppRoutes } from "./routes/app.routes"
+import { AppRoutes } from "./navigation/tab.navigation"
 import { theme } from "./theme"
 
 export default function App() {
