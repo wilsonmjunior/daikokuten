@@ -2,7 +2,7 @@ import { useCallback } from "react"
 
 import { EnLocaleType } from './../locales/en'
 import { PtBRLocaleType } from "../locales/pt-br"
-import { i18n } from "../config/i18n"
+import { i18n } from "./i18n"
 
 type LocaleType = EnLocaleType | PtBRLocaleType
 
