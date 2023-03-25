@@ -8,7 +8,7 @@ import {
 import { getStatusBarHeight } from 'react-native-iphone-x-helper'
 
 import { Rent } from '../../components/Rent'
-import { useLocales } from '../../../hooks/locales'
+import { useLocales } from '../../../utils/locales.hook'
 
 const data = [{ name: 'teste1' }, { name: 'teste2' } ]
 
