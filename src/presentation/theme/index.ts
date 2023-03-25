@@ -1,8 +1,10 @@
-import { extendTheme } from "native-base"
+import { extendTheme, theme as NBTheme } from "native-base"
 
 export const theme = extendTheme({
   colors: {
-
+    ...NBTheme,
+    primary: NBTheme.colors.green,
+    secondary: NBTheme.colors.blue,
   },
   fontConfig: {
     Inter: {
@@ -26,5 +28,4 @@ export const theme = extendTheme({
   config: {
     initialColorMode: 'light',
   },
-  components: {  }
 })
