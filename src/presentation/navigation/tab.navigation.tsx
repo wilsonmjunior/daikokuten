@@ -21,9 +21,9 @@ type ItemMenu = {
 type ColorType = Pick<ItemMenu, 'color' | 'colorSelected'>
 
 type ItemsMenu = {
+  FixedExpenses: ItemMenu;
   Home: ItemMenu;
   Settings: ItemMenu;
-  FixedExpenses: ItemMenu;
   VariableExpenses: ItemMenu;
 }
 
@@ -36,20 +36,20 @@ export function AppRoutes() {
   } as ColorType;
 
   const itemsMenu = {
-    Home: {
+    FixedExpenses: { // Rendas
+      icon: 'list',
+      ...colors,
+    },
+    Home: { // Home
       icon: 'home',
       ...colors,
     },
-    Settings: {
+    Settings: { // Configuracoes
       icon: 'settings',
       ...colors,
     },
-    FixedExpenses: {
-      icon: 'lock',
-      ...colors,
-    },
     VariableExpenses: {
-      icon: 'aperture',
+      icon: 'briefcase',
       ...colors,
     },
   } as ItemsMenu;
@@ -79,7 +79,7 @@ export function AppRoutes() {
       />
       <Tab.Screen
         name="VariableExpenses"
-        component={VariableExpenses}
+        component={VariableExpenses} // Despesas
       />
       <Tab.Screen
         name="FixedExpenses"
