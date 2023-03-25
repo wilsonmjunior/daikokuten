@@ -1,6 +1,7 @@
-import { Center, VStack } from "native-base"
+import { VStack } from "native-base"
 import { getStatusBarHeight } from "react-native-iphone-x-helper"
-import { Button } from "../../components/Forms/Button"
+
+import { HeaderMain } from '../../components/HeaderMain';
 
 interface HomePresentationProps {
   onCreate(): void;
@@ -8,13 +9,8 @@ interface HomePresentationProps {
 
 export function HomePresentation({ onCreate }: HomePresentationProps) {
   return (
-    <VStack space={4} alignItems="center" marginTop={getStatusBarHeight()}>
-      <Center w="64" h="20" rounded="md">
-        <Button
-          title="Adicionar"
-          onPress={onCreate}
-        />
-      </Center>
+    <VStack p="4" marginTop={`${getStatusBarHeight()}px`}>
+      <HeaderMain />
     </VStack>
   )
 }

@@ -1,8 +1,8 @@
 import uuid from 'react-native-uuid';
-import { Expense } from '../../dtos/Expense';
 
-import { IExpense } from "../models/Expense";
+import { IExpense } from "../types/Expense";
 import { getRealm } from "../realm";
+import { Expense } from '../../domain/types/Expense';
 
 const expenseMapper = (expensesResult: Realm.Results<IExpense & Realm.Object<unknown, never>>) =>
   expensesResult.map((expense) => ({
