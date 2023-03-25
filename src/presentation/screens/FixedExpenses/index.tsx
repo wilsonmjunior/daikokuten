@@ -11,10 +11,6 @@ import { useLocales } from '../../../utils/locales.hook'
 
 const data = [{ name: 'teste1' }, { name: 'teste2' } ]
 
-function Separator() {
-  return <Spacer height={4} />
-}
-
 export function FixedExpenses() {
   const { translate } = useLocales()
 
@@ -29,7 +25,7 @@ export function FixedExpenses() {
         renderItem={({ item }) => <Rent />}
         width="100%"
         padding={4}
-        ItemSeparatorComponent={Separator}
+        ItemSeparatorComponent={() => <Spacer height={4} />}
       />
     </Box>
   )
