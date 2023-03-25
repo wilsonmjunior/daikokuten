@@ -36,14 +36,14 @@ export function Rent() {
 
         <Flex>
           <HStack space={2}>
-            <Center w="8" h="2" bg="green.600" rounded="md" shadow={3} />
+            {/* <Center w="8" h="2" bg="green.600" rounded="md" shadow={3} />
             <Center w="8" h="2" bg="green.600" rounded="md" shadow={3} />
             <Center w="8" h="2" bg="green.600" rounded="md" shadow={3} />
             <Center w="8" h="2" bg="green.600" rounded="md" shadow={3} />
             <Center w="8" h="2" bg="gray.100" rounded="md" shadow={3} />
             <Center w="8" h="2" bg="gray.100" rounded="md" shadow={3} />
             <Center w="8" h="2" bg="gray.100" rounded="md" shadow={3} />
-            <Center w="8" h="2" bg="gray.100" rounded="md" shadow={3} />
+            <Center w="8" h="2" bg="gray.100" rounded="md" shadow={3} /> */}
           </HStack>
         </Flex>
 

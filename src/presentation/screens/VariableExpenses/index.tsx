@@ -7,7 +7,7 @@ import {
 } from 'native-base'
 import { getStatusBarHeight } from 'react-native-iphone-x-helper'
 
-import { Rent } from '../../components/Rent'
+import { Rent } from '../../components/RentCard'
 import { useLocales } from '../../../utils/locales.hook'
 
 const data = [{ name: 'teste1' }, { name: 'teste2' } ]
