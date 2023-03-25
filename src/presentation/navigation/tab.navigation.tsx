@@ -5,7 +5,8 @@ import { FixedExpenses } from '../screens/FixedExpenses';
 import { Home } from '../screens/Home';
 import { Settings } from '../screens/Settings';
 import { VariableExpenses } from '../screens/VariableExpenses';
-import { useTheme } from 'native-base';
+import { IconButton, useTheme } from 'native-base';
+import { CreateExpense } from '../screens/CreateExpense';
 
 const Tab = createBottomTabNavigator();
 
@@ -21,6 +22,7 @@ type ItemMenu = {
 type ColorType = Pick<ItemMenu, 'color' | 'colorSelected'>
 
 type ItemsMenu = {
+  Create: ItemMenu;
   FixedExpenses: ItemMenu;
   Home: ItemMenu;
   Settings: ItemMenu;
@@ -36,15 +38,19 @@ export function AppRoutes() {
   } as ColorType;
 
   const itemsMenu = {
-    FixedExpenses: { // Rendas
+    FixedExpenses: {
       icon: 'list',
       ...colors,
     },
-    Home: { // Home
+    Home: {
       icon: 'home',
       ...colors,
     },
-    Settings: { // Configuracoes
+    Create: {
+      icon: 'plus',
+      color: theme.colors.green[600],
+    },
+    Settings: {
       icon: 'settings',
       ...colors,
     },
@@ -60,7 +66,7 @@ export function AppRoutes() {
         headerShown: false,
         tabBarShowLabel: false,
         tabBarIcon: ({ focused, size }) => {
-          return (
+          return itemsMenu[route.name].icon !== 'plus' ? (
             <Feather
               name={itemsMenu[route.name].icon}
               size={size}
@@ -69,6 +75,18 @@ export function AppRoutes() {
                   itemsMenu[route.name].colorSelected
                 : itemsMenu[route.name].color}
             />
+          ) : (
+            <IconButton
+              bg={theme.colors.green[500]}
+              size="md"
+              borderRadius="lg"
+            >
+              <Feather
+                name={itemsMenu[route.name].icon}
+                size={20}
+                color={theme.colors.white}
+              />
+            </IconButton>
           );
         }
       })}
@@ -79,7 +97,11 @@ export function AppRoutes() {
       />
       <Tab.Screen
         name="VariableExpenses"
-        component={VariableExpenses} // Despesas
+        component={VariableExpenses}
+      />
+      <Tab.Screen
+        name="Create"
+        component={CreateExpense}
       />
       <Tab.Screen
         name="FixedExpenses"
