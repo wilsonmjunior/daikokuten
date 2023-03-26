@@ -1,17 +1,15 @@
-import { Box } from 'native-base'
-
+import { ScreenHeight } from '../../components/ScreenHeight'
 import { IExpense } from '../../../infra/types/Expense'
-
 import { createExpense } from '../../../infra/services/expenses'
 
 export function CreateExpense() {
   const handleCreateExpense = async () => {
-   await createExpense({} as IExpense)
+    await createExpense({} as IExpense)
   }
 
   return (
-    <Box>
+    <ScreenHeight>
 
-    </Box>
+    </ScreenHeight>
   )
 }
