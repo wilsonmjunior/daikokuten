@@ -1,12 +1,11 @@
 import {
-  Box,
   FlatList,
   Heading,
   Spacer,
 } from 'native-base'
-import { getStatusBarHeight } from 'react-native-iphone-x-helper'
 
 import { Rent } from '../../components/Rent'
+import { ScreenHeight } from '../../components/ScreenHeight'
 import { useLocales } from '../../../utils/locales.hook'
 
 const data = [{ name: 'teste1' }, { name: 'teste2' } ]
@@ -15,9 +14,9 @@ export function VariableExpenses() {
   const { translate } = useLocales()
 
   return (
-    <Box marginTop={getStatusBarHeight() + 8} flex={1}>
+    <ScreenHeight>
       <Heading fontSize="xl" px="4">
-        {translate('save')}
+        {translate('variableExpenses')}
       </Heading>
 
       <FlatList
@@ -27,6 +26,6 @@ export function VariableExpenses() {
         padding={4}
         ItemSeparatorComponent={() => <Spacer height={4} />}
       />
-    </Box>
+    </ScreenHeight>
   )
 }
